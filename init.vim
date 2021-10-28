@@ -119,8 +119,8 @@ let g:vim_isort_map = '<C-i>'
 
 "--- THEME ---
 colorscheme one
-nmap <leader>cd :set background=dark<CR>
-nmap <leader>cl :set background=light<CR>
+nmap <leader>dd :set background=dark<CR>
+nmap <leader>ll :set background=light<CR>
 let g:airline_theme='one'
 set termguicolors
 
@@ -150,7 +150,7 @@ nmap <leader>g :NERDTreeToggle<CR>
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemode=':t'
 nmap <leader>1 :bp<CR>
-nmap <leader>2 :bp<CR>
+nmap <leader>2 :bn<CR>
 nmap <leader>3 :bd<CR>
 
 inoremap jk <ESC>
@@ -158,7 +158,7 @@ nmap ss i<space><ESC>
 nmap aa o<ESC>
 set hls is
 nmap <silent> <CR> :nohl<CR><C-l>
-
+nnoremap ; :
 "--- Zotero ---
 " Add zotero keys to dictionary - can be searched by pressing F12
 inoremap <F12> <C-X><C-K>
