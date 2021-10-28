@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+""""call plug#begin('~/.vim/plugged')
 
 Plug 'rakr/vim-one'
 Plug 'psf/black' 
@@ -120,7 +120,7 @@ let g:vim_isort_map = '<C-i>'
 "--- THEME ---
 colorscheme one
 nmap <leader>cd :set background=dark<CR>
-nmap <leader>cl :set background=light<CR>
+nmap <leader>cw :set background=light<CR>
 let g:airline_theme='one'
 set termguicolors
 
