@@ -130,7 +130,8 @@ nmap <leader>so :set nospell<CR>
 
 filetype plugin indent on
 set encoding=utf-8
-set number relativenumber
+set number 
+"set relativenumber
 syntax on
 set updatetime=100
 set noswapfile
@@ -152,13 +153,14 @@ let g:airline#extensions#tabline#fnamemode=':t'
 nmap <leader>1 :bp<CR>
 nmap <leader>2 :bn<CR>
 nmap <leader>3 :bd<CR>
-
 inoremap jk <ESC>
 nmap ss i<space><ESC>
 nmap aa o<ESC>
+nmap ff lxi<CR><ESC>
+nmap FF hxi<CR><ESC>
 set hls is
 nmap <silent> <CR> :nohl<CR><C-l>
-nnoremap ; :
+"nnoremap ; :
 "--- Zotero ---
 " Add zotero keys to dictionary - can be searched by pressing F12
 inoremap <F12> <C-X><C-K>
