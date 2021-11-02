@@ -136,7 +136,7 @@ nmap <leader>so :set nospell<CR>
 filetype plugin indent on
 set encoding=utf-8
 set number 
-"set relativenumber
+set relativenumber
 syntax on
 set updatetime=100
 set noswapfile
