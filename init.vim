@@ -85,22 +85,27 @@ autocmd BufWritePre *.py :%s/\s\+$//e
 
 " Window Splits
 set splitbelow splitright
+
 " Remap splits navigation to just CTRL + hjkl
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
 " Make adjusing split sizes a bit more friendly
 noremap <silent> <C-Left> :vertical resize +3<CR>
 noremap <silent> <C-Right> :vertical resize -3<CR>
 noremap <silent> <C-Up> :resize -3<CR>
 noremap <silent> <C-Down> :resize +3<CR>
+
 " Change 2 split windows from vert to horiz or horiz to vert
 map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
-" Start terminals for R and Python sessions '\tr' or '\tp'
+
+" Start terminals for Python sessions '\tp'
 map <Leader>tp :new term://bash<CR>iipython<CR><C-\><C-n><C-w>k
 tnoremap jk <C-\><C-n>
+
 " turn on spelling and make a spell file
 set spelllang=en_au
 
@@ -131,6 +136,7 @@ nmap <leader>so :set nospell<CR>
 filetype plugin indent on
 set encoding=utf-8
 set number 
+set relativenumber
 syntax on
 set updatetime=100
 set noswapfile
@@ -152,10 +158,11 @@ let g:airline#extensions#tabline#fnamemode=':t'
 nmap <leader>1 :bp<CR>
 nmap <leader>2 :bn<CR>
 nmap <leader>3 :bd<CR>
-
 inoremap jk <ESC>
 nmap ss i<space><ESC>
 nmap aa o<ESC>
+nmap ff lxi<CR><ESC>
+nmap FF hxi<CR><ESC>
 set hls is
 nmap <silent> <CR> :nohl<CR><C-l>
 "--- Zotero ---
