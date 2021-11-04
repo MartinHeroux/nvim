@@ -147,7 +147,7 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set fileformat=unix
-
+set linebreak wrap nolist        "wrap words
 let NERDTreeQuitOnOpen=1
 let NERDTreeMinimalUI=1
 nmap <leader>g :NERDTreeToggle<CR>
@@ -164,7 +164,6 @@ nmap ff lxi<CR><ESC>
 nmap FF hxi<CR><ESC>
 set hls is
 nmap <silent> <CR> :nohl<CR><C-l>
-"nnoremap ; :
 "--- Zotero ---
 " Add zotero keys to dictionary 
 set dictionary+=~/Dropbox/zotero_keys.txt
