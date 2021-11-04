@@ -130,7 +130,7 @@ nmap <leader>so :set nospell<CR>
 
 filetype plugin indent on
 set encoding=utf-8
-set number relativenumber
+set number 
 syntax on
 set updatetime=100
 set noswapfile
@@ -142,7 +142,7 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set fileformat=unix
-
+set linebreak wrap nolist        "wrap words
 let NERDTreeQuitOnOpen=1
 let NERDTreeMinimalUI=1
 nmap <leader>g :NERDTreeToggle<CR>
@@ -158,7 +158,6 @@ nmap ss i<space><ESC>
 nmap aa o<ESC>
 set hls is
 nmap <silent> <CR> :nohl<CR><C-l>
-nnoremap ; :
 "--- Zotero ---
 " Add zotero keys to dictionary - can be searched by pressing F12
 inoremap <F12> <C-X><C-K>
