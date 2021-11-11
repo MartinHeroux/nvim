@@ -10,13 +10,15 @@ Plug 'KKPMW/vim-sendtowindow'        " <space>l to send right window or <space>j
 Plug 'haya14busa/incsearch.vim'
 Plug 'haya14busa/incsearch-easymotion.vim'
 Plug 'itchyny/lightline.vim'
-"Plug 'ap/vim-buftabline'
+Plug 'ap/vim-buftabline'
 Plug 'majutsushi/tagbar'
+Plug 'vimwiki/vimwiki'
+Plug 'michal-h21/vim-zettel'
 Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'            " A start menu for vim
-Plug 'yuttie/comfortable-motion.vim'
+" Plug 'yuttie/comfortable-motion.vim'
 Plug 'ncm2/ncm2'                     " completion [dep]: nvim-0.2.2, nvim-yarp, python3
 Plug 'roxma/nvim-yarp'               " remote plugin framework required for ncm2
 Plug 'ncm2/ncm2-bufword'             " complete words in buffer
@@ -175,3 +177,11 @@ nmap <leader>_ :resize -10<CR>
 nmap <leader>+ :resize +10<CR>
 " reload .vimrc in current session
 :nmap vc :so $MYVIMRC<CR>
+
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/Dropbox/Martin/Documents/research/zettelkasten/', 'syntax': 'markdown', 'ext': '.md'}] 
+
+" vim-pandoc
+let g:pandoc#biblio#bibs = "~/Dropbox/zotero.bib"
+let g:pandoc#biblio#use_bibtool = 1
