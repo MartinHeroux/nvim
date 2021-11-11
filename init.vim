@@ -164,8 +164,8 @@ nmap ss i<space><ESC>
 nmap aa o<ESC>
 nmap ff lxi<CR><ESC>
 nmap FF hxi<CR><ESC>
-set hls is
-nmap <silent> <CR> :nohl<CR><C-l>
+set hls 
+nmap <leader><CR> :nohl<CR><C-l>
 "--- Zotero ---
 " Add zotero keys to dictionary 
 set dictionary+=~/Dropbox/zotero_keys.txt
@@ -181,7 +181,3 @@ nmap <leader>+ :resize +10<CR>
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/Martin/Documents/research/zettelkasten/', 'syntax': 'markdown', 'ext': '.md'}] 
-
-" vim-pandoc
-let g:pandoc#biblio#bibs = "~/Dropbox/zotero.bib"
-let g:pandoc#biblio#use_bibtool = 1
