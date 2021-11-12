@@ -4,6 +4,9 @@ Plug 'rakr/vim-one'
 Plug 'psf/black' 
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
+Plug 'vimwiki/vimwiki'
+Plug 'michal-h21/vim-zettel'
+Plug 'vim-pandoc/vim-pandoc'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'KKPMW/vim-sendtowindow'        " <space>l to send right window or <space>j to send down
@@ -17,6 +20,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'            " A start menu for vim
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'numirias/semshi'               " Good Python syntax highlighting
 Plug 'sirver/ultisnips'
 Plug 'ncm2/ncm2'                     " completion [dep]: nvim-0.2.2, nvim-yarp, python3
 Plug 'roxma/nvim-yarp'               " remote plugin framework required for ncm2
@@ -106,9 +110,6 @@ map <Leader>tk <C-w>t<C-w>K
 map <Leader>tp :new term://bash<CR>iipython<CR><C-\><C-n><C-w>k
 tnoremap jk <C-\><C-n>
 
-" turn on spelling and make a spell file
-set spelllang=en_au
-
 " python alias (,p runs python on script. ,t times python script)
 nmap <leader>p :w<CR>:!python3 %<CR>
 
@@ -164,7 +165,7 @@ nmap aa o<ESC>
 nmap ff lxi<CR><ESC>
 nmap FF hxi<CR><ESC>
 set hls is
-nmap <silent> <CR> :nohl<CR><C-l>
+nmap <leader>/ :nohl<CR><C-l>
 "--- Zotero ---
 " Add zotero keys to dictionary - can be searched by pressing F12
 inoremap <F12> <C-X><C-K>
