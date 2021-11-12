@@ -6,7 +6,6 @@ Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vimwiki/vimwiki'
 Plug 'michal-h21/vim-zettel'
-Plug 'vim-pandoc/vim-pandoc'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'KKPMW/vim-sendtowindow'        " <space>l to send right window or <space>j to send down
