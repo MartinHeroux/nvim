@@ -1,48 +1,42 @@
 call plug#begin('~/.vim/plugged')
-
-Plug 'rakr/vim-one'
-Plug 'psf/black' 
-Plug 'ervandew/supertab'
-Plug 'jiangmiao/auto-pairs'
-Plug 'preservim/nerdtree'
-Plug 'preservim/nerdcommenter'
-Plug 'KKPMW/vim-sendtowindow'        " <space>l to send right window or <space>j to send down
-Plug 'haya14busa/incsearch.vim'
-Plug 'haya14busa/incsearch-easymotion.vim'
-Plug 'itchyny/lightline.vim'
-Plug 'ap/vim-buftabline'
-Plug 'majutsushi/tagbar'
+Plug 'rakr/vim-one'                     " light and dark theme 
+Plug 'psf/black'                        " Python auto-formatting 
+Plug 'ervandew/supertab'                " Use Tab for autocomplete
+Plug 'preservim/nerdtree'               " File explorer
+Plug 'KKPMW/vim-sendtowindow'           " <space>l to send right window or <space>j to send down
+Plug 'haya14busa/incsearch.vim'         " Improved incremental search
+Plug 'itchyny/lightline.vim'            " Status line
+Plug 'ap/vim-buftabline'                " Buffer list in tabs on top of window
+Plug 'majutsushi/tagbar'                " Easy navigation of tags
+Plug 'easymotion/vim-easymotion'        " Easy motions to jump to text
 Plug 'vimwiki/vimwiki'
+Plug 'frazrepo/vim-rainbow'
+Plug 'junegunn/vim-peekaboo'
 Plug 'michal-h21/vim-zettel'
-Plug 'tpope/vim-fugitive'
-Plug 'easymotion/vim-easymotion'
-Plug 'airblade/vim-gitgutter'
-Plug 'mhinz/vim-startify'            " A start menu for vim
-" Plug 'yuttie/comfortable-motion.vim'
-Plug 'ncm2/ncm2'                     " completion [dep]: nvim-0.2.2, nvim-yarp, python3
-Plug 'roxma/nvim-yarp'               " remote plugin framework required for ncm2
-Plug 'ncm2/ncm2-bufword'             " complete words in buffer
-Plug 'ncm2/ncm2-path'                " complete paths
-Plug 'ncm2/ncm2-jedi'                " Python completion
-Plug 'fisadev/vim-isort'             " Python sort imports [dep]: pip3 install isort
-Plug 'filipekiss/ncm2-look.vim'      " ncm2 spelling
-Plug 'SirVer/ultisnips'              " hotkeys for chunks of code
+Plug 'tpope/vim-fugitive'               " Vim wrapper for git
+Plug 'airblade/vim-gitgutter'           " Add gitter to show change to tracked files
+Plug 'ncm2/ncm2'                        " completion [dep]: nvim-0.2.2, nvim-yarp, python3
+Plug 'roxma/nvim-yarp'                  " remote plugin framework required for ncm2
+Plug 'ncm2/ncm2-bufword'                " complete words in buffer
+Plug 'ncm2/ncm2-path'                   " complete paths
+Plug 'ncm2/ncm2-jedi'                   " Python completion
+Plug 'fisadev/vim-isort'                " Python sort imports [dep]: pip3 install isort
+Plug 'filipekiss/ncm2-look.vim'         " ncm2 spelling
+Plug 'SirVer/ultisnips'                 " hotkeys for chunks of code
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Finder
-Plug 'junegunn/fzf.vim'              " Fuzzy Finder
+Plug 'junegunn/fzf.vim'                 " Fuzzy Finder
 call plug#end()
 
 let mapleader = "'"
-" ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsEditSplit="vertical"
 
 " ---FZF
 nmap <leader>f :Files<space>
 
-" ncm2-loom
+" ---NCM2
 let g:ncm2_look_enabled = 0
+autocmd BufEnter * call ncm2#enable_for_buffer()      " enable ncm2 for all buffers
+set completeopt=noinsert,menuone,noselect             " IMPORTANT: :help Ncm2PopupOpen for more information
+let g:python3_host_prog='/home/martin/anaconda3/bin/python'            " ncm2-jedi
 
 " ---GIT GUTTER
 let g:gitgutter_async=0
@@ -51,7 +45,7 @@ let g:gitgutter_async=0
 let g:tagbar_ctags_bin='/home/martin/ctags/ctags'
 map <leader>t :TagbarToggle<CR>
 
-" lightline 
+" ---LIGHTLINE STATUS LINE 
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
@@ -63,20 +57,19 @@ let g:lightline = {
       \ },
       \ }
 
-
-" ncm2 
-autocmd BufEnter * call ncm2#enable_for_buffer()      " enable ncm2 for all buffers
-set completeopt=noinsert,menuone,noselect             " IMPORTANT: :help Ncm2PopupOpen for more information
-let g:python3_host_prog='/home/martin/anaconda3/bin/python'            " ncm2-jedi
-
+" ---NERDTREE
 let NERDTreeIgnore = ['\.pyc$']  " ignore pyc files
 
-"easymotion
+" ---EASYMOTION
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
 nmap <leader>s <Plug>(easymotion-overwin-f2)
 
-" Turn on case-insensitive feature
-let g:EasyMotion_smartcase = 1
+let g:EasyMotion_smartcase = 1 " Turn on case-insensitive feature
+
+" ---vim-isort 
+let g:vim_isort_map = '<C-i>'
+
+"----------------------------------
 
 " Remove divider between windows
 set fillchars+=vert:\ 
@@ -107,32 +100,23 @@ map <Leader>tk <C-w>t<C-w>K
 map <Leader>tp :new term://bash<CR>iipython<CR><C-\><C-n><C-w>k
 tnoremap jk <C-\><C-n>
 
-" turn on spelling and make a spell file
-set spelllang=en_au
-
 " python alias (,p runs python on script. ,t times python script)
 nmap <leader>p :w<CR>:!python3 %<CR>
 
-" startify
-let g:startify_lists = [
-      \ { 'type': 'sessions',  'header': ['   Sessions']       },
-      \ { 'type': 'files',     'header': ['   Recent']            },
-      \ { 'type': 'commands',  'header': ['   Commands']       },
-      \ ]
-
-" vim-isort 
-let g:vim_isort_map = '<C-i>'
-
-"--- THEME ---
+"--- THEME
 colorscheme one
 nmap <leader>dd :set background=dark<CR>
 nmap <leader>ll :set background=light<CR>
 let g:airline_theme='one'
 set termguicolors
 
+" VIM-RAINBOW
+let g:rainbow_active = 1
+
 " ---SPELLCHECK
 nmap <leader>sp :setlocal spell spelllang=en_au<CR>
 nmap <leader>so :set nospell<CR>
+set spelllang=en_au " turn on spelling and make a spell file
 
 filetype plugin indent on
 set encoding=utf-8
@@ -177,7 +161,6 @@ nmap <leader>_ :resize -10<CR>
 nmap <leader>+ :resize +10<CR>
 " reload .vimrc in current session
 :nmap vc :so $MYVIMRC<CR>
-
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/Martin/Documents/research/zettelkasten/', 'syntax': 'markdown', 'ext': '.md'}] 
