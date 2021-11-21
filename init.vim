@@ -13,16 +13,19 @@ Plug 'vimwiki/vimwiki'
 Plug 'frazrepo/vim-rainbow'
 Plug 'junegunn/vim-peekaboo'
 Plug 'michal-h21/vim-zettel'
-Plug 'tpope/vim-fugitive'               " Vim wrapper for git
-Plug 'airblade/vim-gitgutter'           " Add gitter to show change to tracked files
-Plug 'ncm2/ncm2'                        " completion [dep]: nvim-0.2.2, nvim-yarp, python3
-Plug 'roxma/nvim-yarp'                  " remote plugin framework required for ncm2
-Plug 'ncm2/ncm2-bufword'                " complete words in buffer
-Plug 'ncm2/ncm2-path'                   " complete paths
-Plug 'ncm2/ncm2-jedi'                   " Python completion
-Plug 'fisadev/vim-isort'                " Python sort imports [dep]: pip3 install isort
-Plug 'filipekiss/ncm2-look.vim'         " ncm2 spelling
-Plug 'SirVer/ultisnips'                 " hotkeys for chunks of code
+Plug 'tpope/vim-fugitive'
+Plug 'easymotion/vim-easymotion'
+Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-startify'            " A start menu for vim
+Plug 'numirias/semshi'               " Good Python syntax highlighting
+Plug 'sirver/ultisnips'
+Plug 'ncm2/ncm2'                     " completion [dep]: nvim-0.2.2, nvim-yarp, python3
+Plug 'roxma/nvim-yarp'               " remote plugin framework required for ncm2
+Plug 'ncm2/ncm2-bufword'             " complete words in buffer
+Plug 'ncm2/ncm2-path'                " complete paths
+Plug 'ncm2/ncm2-jedi'                " Python completion
+Plug 'fisadev/vim-isort'             " Python sort imports [dep]: pip3 install isort
+Plug 'filipekiss/ncm2-look.vim'      " ncm2 spelling
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Fuzzy Finder
 Plug 'junegunn/fzf.vim'                 " Fuzzy Finder
 call plug#end()
